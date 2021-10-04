@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-2
+  name: nginx-3
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: nginx-2
+    namespace: nginx-3
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: nginx-2
+    path: nginx-3
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
     helm:
